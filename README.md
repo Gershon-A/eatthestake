@@ -86,8 +86,14 @@ docker build . -t medooza-stake-backend
 Client
 ```shell
 cd client ; \
-docker build . -t medooza-stake-cliend
+docker build . -t medooza-stake-client
 ```
+## CI/CD
+The pipeline do following:
+1. Install dependencies globally.
+2. Install backend packages and deploy contract to ganache.
+3. Install fronted packaged and run react coverage test. 
+4. Repeating the procedure on different nodejs versions.
 ## Testnets
 deposittoken adress on sokol testnet `0xa8366f25f4030013Dd364930dF6e9260Ac880c40`
 ## ToDo
