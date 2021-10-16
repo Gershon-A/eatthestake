@@ -31,7 +31,7 @@ jobs:
           flags: unittests
           name: codecov-umbrella
 
-  build-and-push-docker-image::
+  build-and-push-docker-image:
    # Triggered only ci was success
     needs: ci
     runs-on: ubuntu-latest
