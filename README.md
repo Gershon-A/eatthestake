@@ -98,14 +98,16 @@ The pipeline do following:
 deposittoken adress on sokol testnet `0xa8366f25f4030013Dd364930dF6e9260Ac880c40`
 ## ToDo
 ### Fronted
-- Instead of enter amount manual add "click to max".
-- Info about previous phase and rewards.
+⬜️| Instead of enter amount manual add "click to max".  
+⬜️| Info about previous phase and rewards.  
 ### Backend
-- Upgradable smart contracts
-- Array of LPT (depositToken) tokens
-- Audit
+⬜️| Upgradable smart contracts.  
+⬜️| Array of LPT (depositToken) tokens.  
+✅| Audit
+
 ### Logic
-- additional reward by amount of staked LPT . e.g +5% 
-formula: 100 LPT +5% = 105 LPT + global daily award.
-global daily award = 10
-100 LPT + 5% + (10 * 15 day )= 255 MDZA
+
+- additional reward by amount of staked LPT . e.g +5%  
+formula: 100 LPT +5% = 105 LPT + global daily award.  
+global daily award = 10  
+100 LPT + 5% + (10 * 15 day )= 255 MDZA  

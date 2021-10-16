@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+## CI/CD
+### build.yaml
+The ci/cd installing the client on different node versions and run basic coverage tests.  
+The project should be compiled and all relevant artifacts should exists in the `client/src/contracts/` folder.  
 ## Available Scripts
 
 In the project directory, you can run:
