@@ -1,9 +1,8 @@
 name: Docker
-
+# Only trigger, when the "ci"" workflow succeeded
 on:
   workflow_run:
     workflows: ["ci"]
-    branches: [sokol]
     types: 
       - completed
 
