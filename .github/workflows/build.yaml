@@ -30,18 +30,8 @@ jobs:
           file: ./coverage/lcov.info
           flags: unittests
           name: codecov-umbrella
-  build-docker-image:
-    needs: ci
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: client/
-    steps:
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag medooza-stake-client:$(date +%s)
 
-  docker:
+  build-and-push-docker-image::
    # Triggered only ci was success
     needs: ci
     runs-on: ubuntu-latest
@@ -58,11 +48,8 @@ jobs:
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Log into registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
 
       - name: Push image
         run: |
