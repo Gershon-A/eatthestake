@@ -3,7 +3,7 @@ name: Docker
 on:
   workflow_run:
     workflows: ["ci"]
-    branches: [main]
+    branches: [sokol]
     types: 
       - completed
 
