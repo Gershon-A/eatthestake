@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./client    
+        working-directory: ../client    
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -49,6 +49,7 @@ jobs:
         uses: docker/setup-buildx-action@v1
       - name: Inspect builder
         run: |
+          ls -ltrh
           echo "Name:      ${{ steps.buildx.outputs.name }}"
           echo "Endpoint:  ${{ steps.buildx.outputs.endpoint }}"
           echo "Status:    ${{ steps.buildx.outputs.status }}"
