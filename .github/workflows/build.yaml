@@ -27,6 +27,16 @@ jobs:
           file: ./coverage/lcov.info
           flags: unittests
           name: codecov-umbrella
+  build-docker-image:
+    needs: ci
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client/
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag medooza-stake-client:$(date +%s)
 
   docker:
    # Triggered only ci was success
@@ -34,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ../client    
+        working-directory: client/    
     steps:
       - name: Checkout
         uses: actions/checkout@v2
