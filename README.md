@@ -58,6 +58,17 @@ advancetime = new Promise((resolve,reject) => { web3.currentProvider.send({jsonr
 - The DApp was designed for ETB token and Pancakeswap LP tokens. So it only supports 18 decimal tokens, and no support for tokens with fee on transfer and other esoterica.
 - For some reason, when running the unit tests, truffle takes around 1:30 minutes before it even reaches the initial compilation stage. I'm not sure if it's a local error or something with Truffle. Anyway, this does not happen when running deployment.
 - In the truffle tests it is tricky to test for balances, as we are calculating based on seconds and sometimes there is 1-3 seconds of delay. [See here Gotacha#2](https://medium.com/fluidity/standing-the-time-of-test-b906fcc374a9) for explanation. To combat this, when testing time sensitive functions, I allow the actual result to be within 3 (monetary unit allocated per second) error of margin from the expected result.
+## Prepare application config files for Development, Staging & Production
+- Development Environment (.env.development)
+```
+# MASTER CONFIG
+# DEVELOPMENT ENVIRONMENT
+APP_HOST=0.0.0.0
+APP_PORT=3000
+APP_MODE="Development"
+APP_URL=http://localhost:3000
+API_URL=https://api.development-domain.com:8080/v1/
+```
 
 ## Misc
 - The contract is based upon SushiSwap's MasterChef.

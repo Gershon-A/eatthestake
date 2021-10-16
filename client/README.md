@@ -1,9 +1,44 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Important:
+`client/src/contracts` properly created in previous step and exists.
+## Docker
+Client
+```shell
+cd client ; \
+docker build . -t medooza-stake-client
+```
+Run for development:
+```
+docker run --name medooza-stake-client --env NODE_ENV=development -d -p 8181:4010 medooza-stake-client
+```
+Run for production:
+```shell
+docker run --name medooza-stake-client --env NODE_ENV=production -d -p 8181:4000 medooza-stake-client
+```
+
 ## CI/CD
 ### build.yaml
 The ci/cd installing the client on different node versions and run basic coverage tests.  
 The project should be compiled and all relevant artifacts should exists in the `client/src/contracts/` folder.  
+
+## PM2 auto deploy
+Install dotenv-cli globally
+  ```
+  npm install -g dotenv-cli pm2
+  ```
+Start script as following:
+```
+pm2 start ecosystem.config.js --env production
+```
+Reload with different environment
+```
+pm2 restart/reload ecosystem.config.js [--env production]
+```
 ## Available Scripts
+With process manager:
+### `pm2 start ecosystem.config.js --env production`
+### `pm2 start ecosystem.config.js --env development`
+### `pm2 start ecosystem.config.js --env staging`
 
 In the project directory, you can run:
 

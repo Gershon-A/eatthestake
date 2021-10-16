@@ -24,7 +24,7 @@ module.exports = {
       provider: function() {
             return new HDWalletProvider(
             process.env.MNEMONIC,
-            "https://dai.poa.network")
+            "process.env.RPC")
       },
       network_id: 100,
       gas: 500000,
@@ -34,7 +34,7 @@ module.exports = {
     provider: function() {
           return new HDWalletProvider(
             process.env.MNEMONIC,
-            "https://sokol.poa.network")
+            "process.env.RPC")
     },
     network_id: 77,
     gas: 6000000,

@@ -7,8 +7,8 @@ require('dotenv').config()
 
 module.exports = async function(deployer, network, accounts) {
   // Sokol
-  let depositToken = '0xaa32bb2aded2a2c1a0213bd5aaa84332ae59344e'; // honeyswap MDZA-xDAI Pair
-  let rewardToken = '0x4BB2C33e0093bFCA1C3E22f9A0D97af42c8568cB'; // TMDZA on sokol
+  let depositToken = process.env.DEPOSITTOKEN; // honeyswap MDZA-xDAI Pair
+  let rewardToken = process.env.REWARDTOKEN; // TMDZA on sokol
   /*  // BSC addresses
     let depositToken = '0xdb44c35cd6c378eb9e593d4c7243118064172fb2'; // PancakeSwap V2: ETB
     let rewardToken = '0x7ac64008fa000bfdc4494e0bfcc9f4eff3d51d2a'; // ETB
