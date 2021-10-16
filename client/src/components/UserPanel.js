@@ -165,7 +165,10 @@ export default function UserPanel() {
                     <Button onClick={claim} >Claim rewards</Button>
                 </div>
                 <br/>
+
                 </Container>
+
         </>
+
     )
 }

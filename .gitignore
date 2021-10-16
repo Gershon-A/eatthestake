@@ -1,6 +1,8 @@
 node_modules/
 client/src/contracts/Migrations.json
-client/src/contracts/
+#client/src/contracts/
 rganache
 tconsole
 build/
+.env*
+tmp/

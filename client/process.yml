@@ -1,0 +1,33 @@
+apps:
+  - script: 'serve'
+    exec_mode: 'fork'
+    name: 'worker-0'
+    args: 'dotenv ../.env.sokol'
+    env:
+      PORT: 3500
+      NODE_ENV: production
+      PM2_SERVE_PATH: 'build'  
+  - script: 'serve'
+    exec_mode: 'fork'
+    name: 'worker-1'
+    args: 'dotenv ../.env.sokol'    
+    env:
+      PORT: 3501
+      NODE_ENV: production
+      PM2_SERVE_PATH: 'build' 
+  - script: 'serve'
+    exec_mode: 'fork'
+    name: 'worker-2'
+    args: 'dotenv ../.env.sokol'    
+    env:
+      PORT: 3502
+      NODE_ENV: production
+      PM2_SERVE_PATH: 'build' 
+  - script: 'serve'
+    args: 'dotenv ../.env.sokol'  
+    exec_mode: 'fork'
+    name: 'worker-3'
+    env:
+      PORT: 3503
+      NODE_ENV: production
+      PM2_SERVE_PATH: 'build' 
