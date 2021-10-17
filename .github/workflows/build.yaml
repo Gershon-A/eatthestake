@@ -73,7 +73,7 @@ jobs:
           DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
           DOCKER_HUB_REPO: gershona/eatthestake
         run: |
-          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD 
+          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag chamodshehanka/node-test:$(date +%s)
 
