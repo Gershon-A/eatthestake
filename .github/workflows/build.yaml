@@ -83,5 +83,5 @@ jobs:
           
       - name: Docker hub Push
         run: |
-          docker tag medooza-stake-client:latest gershona/eatthestake:latest
-          docker push gershona/eatthestake:latest
+          docker tag $IMAGE_NAME:$VERSION $DOCKER_HUB_REPO:$VERSION
+          docker push $DOCKER_HUB_REPO:$VERSION
