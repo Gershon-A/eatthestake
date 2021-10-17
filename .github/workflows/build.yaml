@@ -18,8 +18,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       # Install backend
       - run: CI=true npm install -g -g ganache-cli truffle
-      - run: ganache-cli -p 8545 -d
+      - run: ganache-cli -p 7545 > /dev/null &
       - run: CI=true npm  install
+      - run: truffle test
       
   ci-fronted:
     runs-on: ubuntu-latest
