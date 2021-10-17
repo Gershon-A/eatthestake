@@ -3,12 +3,37 @@ name: ci
 on: [push, pull_request]
 
 jobs:
-  ci:
+  ci-backend:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x, 15.x]
+        node-version: [15.x]
+    steps:
+      - name: SCM
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      # Install backend
+      - run: CI=true npm install -g ganache-cli truffle
+      - run: ganache-cli -p 8545 > /dev/null &
+      - run: CI=true npm  install
+      # Fixing  problem on Node v14.15.3 by installing pify
+      - run: npm install --save-dev pify
+      - run: truffle test
+      
+  ci-fronted:
+    runs-on: ubuntu-latest
+    # Triggered only ci-fronted was success
+    needs: ci-backend
+    defaults:
+      run:
+        working-directory: client/     
+    strategy:
+      matrix:
+        node-version: [15.x]
     steps:
       - name: SCM
         uses: actions/checkout@v2
@@ -17,9 +42,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       # Install and test Fronted
-      - run: npm --prefix $PWD/client/ install
-      - run: npm run build --if-present
-      - run: CI=true npm --prefix $PWD/client/ test --coverage --watchAll
+      - run: CI=true npm  install
+      # - run: npm run build --if-present
+      - run: CI=true npm test --coverage --watchAll
       - name: Upload coverage to Codecov
         if: matrix.node-version == '15.x'
         uses: codecov/codecov-action@v1
@@ -31,8 +56,8 @@ jobs:
 
   build-and-push-docker-image:
  
-   # Triggered only ci was success
-    needs: ci
+   # Triggered only ci-fronted was success
+    needs: ci-fronted
     runs-on: ubuntu-latest
     defaults:
       run:
