@@ -1,9 +1,7 @@
 name: ci
 
 on: [push, pull_request]
-env:
-  # TODO: Change variable to your image's name.
-  IMAGE_NAME: medooza-stake-client
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -32,12 +30,19 @@ jobs:
           name: codecov-umbrella
 
   build-and-push-docker-image:
+ 
    # Triggered only ci was success
     needs: ci
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: client/    
+    env:
+      # TODO: Change variable to your image's name.
+      IMAGE_NAME: medooza-stake-client    
+      DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
+      DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+      DOCKER_HUB_REPO: gershona/eatthestake
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -66,16 +71,11 @@ jobs:
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+          
         # Upload image to Docker Hub  
       - name: docker hub login
-        env:
-          DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
-          DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
-          DOCKER_HUB_REPO: gershona/eatthestake
         run: |
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
-      - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag chamodshehanka/node-test:$(date +%s)
 
       - name: Docker hub Push
         run: |
