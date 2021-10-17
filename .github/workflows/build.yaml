@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [15.x, 16.x]
     steps:
       - name: SCM
         uses: actions/checkout@v2
@@ -23,6 +23,9 @@ jobs:
       # Fixing  problem on Node v14.15.3 by installing pify
       - run: npm install --save-dev pify
       - run: truffle test
+      # This one will produce all required artifacts in "client/src/contract" directory.
+      # and will be used latter in the "ci-fronted" section when we also testing fronted build.
+      - run: truffle migrate --network development --reset
       
   ci-fronted:
     runs-on: ubuntu-latest
@@ -33,7 +36,7 @@ jobs:
         working-directory: client/     
     strategy:
       matrix:
-        node-version: [15.x]
+        node-version: [15.x, 16.x]
     steps:
       - name: SCM
         uses: actions/checkout@v2
@@ -96,17 +99,3 @@ jobs:
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
-          
-        # Upload image to Docker Hub  
-      - name: docker hub login
-        run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD 
-
-      - name: List Images
-        run: |
-          docker image ls -a
-          
-      - name: Docker hub Push
-        run: |       
-          docker tag $IMAGE_NAME:latest $DOCKER_HUB_REPO:latest
-          docker push $DOCKER_HUB_REPO:latest
