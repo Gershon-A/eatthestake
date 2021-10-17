@@ -1,7 +1,8 @@
 module.exports = {
   apps : [{
     name   : "eatthestake-staging",
-    script : "serve",
+    script : 'serve',
+    args      : 'build',
     //args: 'dotenv ../.env.sokol ',
     watch: true,
     //error_file: "/dev/stderr",
@@ -16,14 +17,14 @@ module.exports = {
     env_development: {
        NODE_ENV: "development",
        PM2_SERVE_PATH: 'build',
-       PM2_SERVE_PORT: 4010,
+       PM2_SERVE_PORT: 4000,
        PM2_SERVE_HOMEPAGE: '/index.html'
     },
     env_staging: {
       NODE_ENV: "staging",
     },
-  }] ,
- /* ToDO */
+  }] 
+ /* ToDO 
   deploy : {
     production : {
       user : 'SSH_USERNAME',
@@ -35,5 +36,5 @@ module.exports = {
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
     }
-  }
+  }*/
 };

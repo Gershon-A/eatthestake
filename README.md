@@ -99,6 +99,14 @@ Client
 cd client ; \
 docker build . -t medooza-stake-client
 ```
+Start:
+```shell
+docker run --name medooza-stake-client -d -p 8181:3000 medooza-stake-client
+```
+Production:
+```shell
+docker run --name medooza-stake-client --env NODE_ENV=production -d -p 4000:4000 gershona/eatthestake:1.0.0
+```
 ## CI/CD
 The pipeline do following:
 1. Install dependencies globally.

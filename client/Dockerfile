@@ -11,15 +11,18 @@ WORKDIR /app
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
 COPY package*.json ./
+# make sure you're doing a clean install of your dependencies.
+RUN npm ci --silent
 
 RUN npm install
 # If you are building your code for production
 # RUN npm ci --only=production
-# PM2 wrap your applications into a proper Node.js production environment. 
-# dotenv-cli to manage envarioments
+
 RUN npm install pm2 dotenv-cli -g
 # Bundle app source
 COPY . .
+# Build the app
+RUN npm run build
 
 RUN chmod +x docker-entrypoint.sh
 ENTRYPOINT  ["sh","docker-entrypoint.sh"]
