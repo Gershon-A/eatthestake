@@ -42,7 +42,7 @@ jobs:
       IMAGE_NAME: medooza-stake-client    
       DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
-      DOCKER_HUB_REPO: gershona/eatthestake
+      DOCKER_HUB_REPO: "gershona/eatthestake"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -79,5 +79,7 @@ jobs:
 
       - name: Docker hub Push
         run: |
-          docker tag $IMAGE_NAME $DOCKER_HUB_REPO:$VERSION
+          echo "$IMAGE_ID:$VERSION"
+          echo "$DOCKER_HUB_REPO:$VERSION"
+          docker tag $IMAGE_ID:$VERSION $DOCKER_HUB_REPO:$VERSION
           docker push $DOCKER_HUB_REPO:$VERSION
