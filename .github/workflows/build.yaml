@@ -66,3 +66,18 @@ jobs:
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
           docker push $IMAGE_ID:$VERSION
+        # Upload image to Docker Hub  
+      - name: docker hub login
+        env:
+          DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
+          DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+          DOCKER_HUB_REPO: gershona/eatthestake
+        run: |
+          docker login -u $DOCKERHUB_USERNAME -p $DOCKERHUB_PASSWORD 
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag chamodshehanka/node-test:$(date +%s)
+
+      - name: Docker hub Push
+        run: |
+          docker tag $IMAGE_NAME $DOCKER_HUB_REPO:$VERSION
+          docker push $DOCKER_HUB_REPO:$VERSION
