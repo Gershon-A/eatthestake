@@ -79,7 +79,7 @@ jobs:
 
       - name: Docker hub Push
         run: |
-          echo "$IMAGE_ID:$VERSION"
-          echo "$DOCKER_HUB_REPO:$VERSION"
-          docker tag $IMAGE_ID:$VERSION $DOCKER_HUB_REPO:$VERSION
-          docker push $DOCKER_HUB_REPO:$VERSION
+          echo $IMAGE_ID:$VERSION
+          echo $DOCKER_HUB_REPO:$VERSION
+          docker tag $IMAGE_ID:$VERSION gershona/eatthestake:$VERSION
+          docker push gershona/eatthestake:$VERSION
