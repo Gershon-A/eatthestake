@@ -67,7 +67,7 @@ export default function NavBar() {
                 </div>
                 <div>
 
-               {web3? <AddressView />: 'Not connected'}
+               {web3? <AddressView />: 'Wallet Not connected'}
                 </div>
                 <div>
                <TokenToWalletView/> 

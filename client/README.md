@@ -1,20 +1,22 @@
+This project was forked from [Eatthestake](https://github.com/facebook/create-react-app).
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Important:
-`client/src/contracts` properly created in previous step and exists.
+`client/src/contracts` properly created when running `backend` e.g `truffle migrate --reset --network development` step and exists.
 ## Docker
+The docker image available at `docker pull ghcr.io/gershon-a/eatthestake/medooza-stake-client:sokol`
 Client
 ```shell
-cd client ; \
 docker build . -t medooza-stake-client
 ```
 Run for development:
 ```
-docker run --name medooza-stake-client --env NODE_ENV=development -d -p 8181:4010 medooza-stake-client
+docker run --name medooza-stake-client --env NODE_ENV=development -d -p 8181:4000 medooza-stake-client
 ```
 Run for production:
 ```shell
-docker run --name medooza-stake-client --env NODE_ENV=production -d -p 8181:4000 medooza-stake-client
+docker run --name medooza-stake-client --env NODE_ENV=production -d -p 8080:4000 medooza-stake-client
 ```
+The application should be running at  [localhost:8080] (http://localhost:8080) for production [localhost:8181] (http://localhost:8181)  for development.
 
 ## CI/CD
 ### build.yaml
