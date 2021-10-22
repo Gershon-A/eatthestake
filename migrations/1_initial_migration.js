@@ -9,6 +9,7 @@ module.exports = async function(deployer, network, accounts) {
   // Sokol
   let depositToken = process.env.DEPOSITTOKEN; // honeyswap MDZA-xDAI Pair
   let rewardToken = process.env.REWARDTOKEN; // TMDZA on sokol
+  let AdminAccount = process.env.ADMINACCOUNT;
   /*  // BSC addresses
     let depositToken = '0xdb44c35cd6c378eb9e593d4c7243118064172fb2'; // PancakeSwap V2: ETB
     let rewardToken = '0x7ac64008fa000bfdc4494e0bfcc9f4eff3d51d2a'; // ETB
@@ -33,7 +34,7 @@ module.exports = async function(deployer, network, accounts) {
     await erc20factory.createToken("LP MDZA-XDAI v2", "LPToken");
     const tokens = await erc20factory.getTokens()
     console.log(tokens);
-    await lpToken.mint(process.env.account, Web3.utils.toWei("1000000")); // mint to admin account
+    await lpToken.mint(AdminAccount, Web3.utils.toWei("1000000")); // mint to admin account
     depositToken = tokens
 
   } else if (network == "sokol") {
@@ -46,7 +47,7 @@ module.exports = async function(deployer, network, accounts) {
 
     console.log("tokens:" +tokens);
     const lpToken = await MockERC20.at(tokens[0]);
-    await lpToken.mint(process.env.account, Web3.utils.toWei("1000000"));
+    await lpToken.mint(AdminAccount, Web3.utils.toWei("1000000"));
 
     depositToken = tokens[0];
     console.log("depositToken:" +depositToken)
