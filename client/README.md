@@ -36,9 +36,10 @@ pm2 restart/reload ecosystem.config.js [--env production]
 ```
 ## Available Scripts
 With process manager:
-### `pm2 start ecosystem.config.js --env production`
-### `pm2 start ecosystem.config.js --env development`
-### `pm2 start ecosystem.config.js --env staging`
+
+    `pm2 start ecosystem.config.js --env production`  
+    `pm2 start ecosystem.config.js --env development`  
+    `pm2 start ecosystem.config.js --env staging`  
 
 In the project directory, you can run:
 
