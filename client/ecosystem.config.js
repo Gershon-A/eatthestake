@@ -1,6 +1,6 @@
 module.exports = {
   apps : [{
-    name   : "eatthestake-staging",
+    name   : "eatthestake",
     script : "serve",
     //args: 'dotenv ../.env.sokol ',
     watch: true,
@@ -16,7 +16,7 @@ module.exports = {
     env_development: {
        NODE_ENV: "development",
        PM2_SERVE_PATH: 'build',
-       PM2_SERVE_PORT: 4010,
+       PM2_SERVE_PORT: 4000,
        PM2_SERVE_HOMEPAGE: '/index.html'
     },
     env_staging: {

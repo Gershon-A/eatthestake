@@ -154,20 +154,24 @@ cd client ; \
 docker build . -t medooza-stake-client
 ```
 ## CI/CD
-If You wish to push image to Your docker hub on release, add github secrets:
-```
-DOCKERHUB_USERNAME
-DOCKERHUB_PASSWORD
-```
+### build.yaml
 The pipeline do following:
 1. Install dependencies globally.
 2. Install backend packages and deploy contract to locally running ganache.
 3. Install fronted packaged and run react coverage test. 
 4. Repeating the procedure on different nodejs versions.
 5. On success, package created. [Package example](https://github.com/Gershon-A/eatthestake/pkgs/container/eatthestake%2Fmedooza-stake-client)  
-6. On release: creating docker image and upload to DockerHub `https://hub.docker.com/repository/docker/gershona/eatthestake` with the release tag.
-
-
+If the pipeline was success, You can access and run created package as following:
+```shell
+docker run --name medooza-stake-client2-development --env NODE_ENV=development -d -p 8282:4000 ghcr.io/gershon-a/eatthestake/medooza-stake-client:main
+```
+### push-to-dockerhub.yaml
+If You wish to push image to Your docker hub on release, add github secrets:
+```
+DOCKERHUB_USERNAME
+DOCKERHUB_PASSWORD
+```
+On release: creating docker image and upload to DockerHub `https://hub.docker.com/repository/docker/gershona/eatthestake` with the release tag.
 ## ToDo
 ### Fronted
 ⬜️| Instead of enter amount manual add "click to max".  
