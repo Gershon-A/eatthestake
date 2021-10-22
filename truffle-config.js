@@ -27,8 +27,8 @@ module.exports = {
             process.env.RPC)
       },
       network_id: 100,
-      gas: 500000,
-      gasPrice: 1000000000 // 10 Gwey
+      gas: 5000000,
+      gasPrice: 2000000000 // 20 Gwey
     },   
   sokol: {
     provider: function() {
