@@ -39,9 +39,9 @@ docker run --name medooza-stake-client-production --env NODE_ENV=production -d -
 The application should be available at http://localhost:8080
 
 ## Run with PM2 process manager
-Install dotenv-cli globally
+Install pm2 globally and build the project `npm run build`
   ```
-  npm install -g dotenv-cli pm2
+  npm install -g pm2 && npm run build
   ```
 Start script as following:
 ```
@@ -51,6 +51,8 @@ Reload with different environment
 ```
 pm2 restart/reload ecosystem.config.js [--env production]
 ```
+Application will be listened on http://localhost:4000/
+![screenshot](screen1.png)
 ### Available Scripts
 With process manager:
 

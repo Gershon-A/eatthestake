@@ -24,17 +24,17 @@ module.exports = {
       provider: function() {
             return new HDWalletProvider(
             process.env.MNEMONIC,
-            "process.env.RPC")
+            process.env.RPC)
       },
       network_id: 100,
       gas: 500000,
-      gasPrice: 1000000000
+      gasPrice: 1000000000 // 10 Gwey
     },   
   sokol: {
     provider: function() {
           return new HDWalletProvider(
             process.env.MNEMONIC,
-            "process.env.RPC")
+            process.env.RPC)
     },
     network_id: 77,
     gas: 6000000,

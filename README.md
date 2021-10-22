@@ -143,10 +143,6 @@ Audit file: [Audit file](audit/ce997d5316543b369ede443c.pdf)
 Done by [MYTHX](https://mythx.io/)
 
 ## Docker
-Backend:
-```shell
-docker build . -t medooza-stake-backend
-```
 Fronted:
 [More info about client](client/README.md)  
 ```shell
