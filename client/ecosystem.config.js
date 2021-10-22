@@ -1,12 +1,8 @@
 module.exports = {
   apps : [{
-    name   : "eatthestake-staging",
-    script : 'serve',
-    args      : 'build',
-    //args: 'dotenv ../.env.sokol ',
+    name   : "eatthestake",
+    script : "serve",
     watch: true,
-    //error_file: "/dev/stderr",
-    //out_file: "/dev/stdout",
     env_production: {
        NODE_ENV: "production",
        HOST: '0.0.0.0',
@@ -34,6 +30,11 @@ module.exports = {
       path : 'DESTINATION_PATH',
       'pre-deploy-local': '',
       'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
+      'pre-setup': ''
+    },
+    development : {
+      'pre-deploy-local': 'yarn build',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env development',
       'pre-setup': ''
     }
   }*/

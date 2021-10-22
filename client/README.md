@@ -1,32 +1,47 @@
 This project was forked from [Eatthestake](https://github.com/facebook/create-react-app).
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Important:
-`client/src/contracts` properly created when running `backend` e.g `truffle migrate --reset --network development` step and exists.
-## Docker
-The docker image available at `docker pull ghcr.io/gershon-a/eatthestake/medooza-stake-client:sokol`
+`client/src/contracts` properly created in [previous](../README.md) step and exists.
+
+## CI/CD 
+### build.yaml
+The pipeline do following:
+1. Install dependencies globally.
+2. Install backend packages and deploy contract to locally running ganache.
+3. Install fronted packaged and run react coverage test. 
+4. Repeating the procedure on different nodejs versions.
+5. On success, package created. [Package example](https://github.com/Gershon-A/eatthestake/pkgs/container/eatthestake%2Fmedooza-stake-client)  
+If the pipeline was success, You can access and run created package as following:
+```shell
+docker run --name medooza-stake-client2-development --env NODE_ENV=development -d -p 8282:4000 ghcr.io/gershon-a/eatthestake/medooza-stake-client:main
+```
+### push-to-dockerhub.yaml
+If You wish to push image to Your docker hub on release, add github secrets:
+```
+DOCKERHUB_USERNAME
+DOCKERHUB_PASSWORD
+```
+On release: creating docker image and upload to DockerHub `https://hub.docker.com/repository/docker/gershona/eatthestake` with the release tag.
+## Run with Docker
 Client
 ```shell
 docker build . -t medooza-stake-client
 ```
 Run for development:
 ```
-docker run --name medooza-stake-client --env NODE_ENV=development -d -p 8181:4000 medooza-stake-client
+docker run --name medooza-stake-client-development --env NODE_ENV=development -d -p 8181:4000 medooza-stake-client
 ```
+The application should be available at http://localhost:8181
 Run for production:
 ```shell
-docker run --name medooza-stake-client --env NODE_ENV=production -d -p 8080:4000 medooza-stake-client
+docker run --name medooza-stake-client-production --env NODE_ENV=production -d -p 8080:4000 medooza-stake-client
 ```
-The application should be running at  [localhost:8080] (http://localhost:8080) for production [localhost:8181] (http://localhost:8181)  for development.
+The application should be available at http://localhost:8080
 
-## CI/CD
-### build.yaml
-The ci/cd installing the client on different node versions and run basic coverage tests.  
-The project should be compiled and all relevant artifacts should exists in the `client/src/contracts/` folder.  
-
-## PM2 auto deploy
-Install dotenv-cli globally
+## Run with PM2 process manager
+Install pm2 globally and build the project `npm run build`
   ```
-  npm install -g dotenv-cli pm2
+  npm install -g pm2 && npm run build
   ```
 Start script as following:
 ```
@@ -36,12 +51,16 @@ Reload with different environment
 ```
 pm2 restart/reload ecosystem.config.js [--env production]
 ```
-## Available Scripts
+Application will be listened on http://localhost:4000/
+![screenshot](screen1.png)
+### Available Scripts
 With process manager:
-### `pm2 start ecosystem.config.js --env production`
-### `pm2 start ecosystem.config.js --env development`
-### `pm2 start ecosystem.config.js --env staging`
 
+    `pm2 start ecosystem.config.js --env production`  
+    `pm2 start ecosystem.config.js --env development`  
+    `pm2 start ecosystem.config.js --env staging`  
+
+## Run with yarn
 In the project directory, you can run:
 
 ### `yarn start`
