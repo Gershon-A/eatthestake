@@ -26,14 +26,14 @@ jobs:
       # This one will produce all required artifacts in "client/src/contract" directory.
       # and will be used latter in the "ci-fronted" section when we also testing fronted build.
       - run: truffle migrate --network development --reset
-      
+
   ci-fronted:
     runs-on: ubuntu-latest
     # Triggered only ci-fronted was success
     needs: ci-backend
     defaults:
       run:
-        working-directory: client/     
+        working-directory: client/
     strategy:
       matrix:
         node-version: [14.x, 15.x, 16.x]
@@ -58,26 +58,25 @@ jobs:
           name: codecov-umbrella
 
   build-and-push-docker-image:
- 
-   # Triggered only ci-fronted was success
+    # Triggered only ci-fronted was success
     needs: ci-fronted
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: client/    
+        working-directory: client/
     env:
       # TODO: Change variable to your image's name.
-      IMAGE_NAME: medooza-stake-client    
+      IMAGE_NAME: medooza-stake-client
       DOCKER_USER: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKER_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
       DOCKER_HUB_REPO: "gershona/eatthestake"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-    #  - name: Set client as working directory
-    #    working-directory: ./client 
-    #    run: cp .env.dev .env
-        # build against more platforms
+      #  - name: Set client as working directory
+      #    working-directory: ./client
+      #    run: cp .env.dev .env
+      # build against more platforms
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
 
