@@ -27,14 +27,18 @@ Client
 cd client ; \
 docker build . -t medooza-stake-client
 ```
-Run for development:
+Run for development locally:
 ```
 docker run --name medooza-stake-client-development --env NODE_ENV=development -d -p 8181:4000 medooza-stake-client
 ```
 The application should be available at http://localhost:8181
-Run for production:
+Run for production locally:
 ```shell
 docker run --name medooza-stake-client-production --env NODE_ENV=production -d -p 8080:4000 medooza-stake-client
+```
+Run docker production:
+```
+docker run --name medooza-stake -d --restart unless-stopped --env NODE_ENV=production -p 4000:4000 gershona/eatthestake:xdai_prd_1.0
 ```
 The application should be available at http://localhost:8080
 

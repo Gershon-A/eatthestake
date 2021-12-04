@@ -185,3 +185,6 @@ On release: creating docker image and upload to DockerHub `https://hub.docker.co
 - The DApp was designed for 18 decimal tokens, and no support for tokens with fee on transfer and other esoterica.
 - For some reason, when running the unit tests, truffle takes around 1:30 minutes before it even reaches the initial compilation stage. I'm not sure if it's a local error or something with Truffle. Anyway, this does not happen when running deployment.
 - In the truffle tests it is tricky to test for balances, as we are calculating based on seconds and sometimes there is 1-3 seconds of delay. [See here Gotacha#2](https://medium.com/fluidity/standing-the-time-of-test-b906fcc374a9) for explanation. To combat this, when testing time sensitive functions, I allow the actual result to be within 3 (monetary unit allocated per second) error of margin from the expected result.
+
+## Deployment video
+<a href="https://youtu.be/FWYWKj2QYRY" title="Deployment video"><img src="screenshot.png" alt="Medooza stake dApp" /></a>
