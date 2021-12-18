@@ -3,6 +3,7 @@ import React, {useContext} from "react";
 import BlockchainContext from "../context/BlockchainContext";
 import Button from 'react-bootstrap/Button';
 
+
 const tokenAddress = '0xbAb3cbDcBCc578445480a79ed80269C50bB5B718';
 const tokenSymbol = 'MDZA';
 const tokenDecimals = 18;
@@ -46,33 +47,53 @@ export default function NavBar() {
 
     const TokenToWalletView = () => (
         <>
-        {<div><Button onClick={addtokentoWallet}  >Add token to Wallet</Button></div> }
+        {<div class="button-box button-1"><Button variant="primary" className="button  button-1" onClick={addtokentoWallet}  >Add token to Wallet</Button></div> }
         </>
     )
 
     return (
         <>
-            <div className="minimalistic-nav-bar">
-                <div>
-                <img
-                    alt=""
-                    src={require('../logo.png')}
-                    width="300px"
-                    height="27px"
-                    className="d-inline-block align-top"
-                />
-                </div>
-                <div>
-                MEDOOZA ECCOSYSTEM STAKE
-                </div>
-                <div>
 
-               {web3? <AddressView />: 'Not connected'}
+        <div class="mein-menu">
+            <nav class="navbar navbar-expand-lg navbar-dark ">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="assets/img/logo-white.webp" class="logo" alt="Medooza logo" height="100px" width="200px"></img>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="https://app.honeyswap.org/#/add/0xbab3cbdcbcc578445480a79ed80269c50bb5b718/xDAI?chainId=100" target="_blank">Join the Pool</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#prediction">Price Prediction</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#faq">FAQ & Support</a>
+                            </li>
+
+                            <li class="nav-item">
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link button-1" href="#">{web3? <AddressView />: 'Not connected'}</a>
+                            </li>
+                            <li class="nav-item">                
+                                   
+                                      <TokenToWalletView/> 
+                                   
+                                  </li>
+                        </ul>
+                    </div>
                 </div>
-                <div>
-               <TokenToWalletView/> 
-                </div>
-            </div>
+            </nav>
+        </div>
+  
+  
         </>
     )
 }

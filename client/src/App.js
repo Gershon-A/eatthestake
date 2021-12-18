@@ -16,6 +16,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Button from 'react-bootstrap/Button';
 import Spinner from 'react-bootstrap/Spinner'
 
+import "./style.css";
 import "./App.css";
 
 function App() {
@@ -168,7 +169,7 @@ function App() {
 
   const MainViewOrConnectView = () => (
     <>
-      {web3? <MainView /> : <div><br/><Button onClick={initConnection} disabled={isConnectingToWallet} >Connect</Button></div> }
+      {web3? <MainView /> : <div class="col-xs-1" align="center"><br/><Button className="button-2" onClick={initConnection} disabled={isConnectingToWallet} >To get started please Connect MetaMask</Button></div> }
     </>
   )
 
@@ -195,19 +196,6 @@ function App() {
         </div>
             <br></br>
             <br></br>
-        <div className="row">
-            <div className="col-sm px-md-5">
-              <coingecko-coin-ticker-widget currency="usd" coin-id="medooza-ecosystem" locale="en">
-              </coingecko-coin-ticker-widget>
-            </div>
-        </div>    
-            <br></br>
-            <br></br>
-        <div className="row">
-            <div className="col-sm px-md-5">
-           <iframe width="100%" height="350px" border="0" className="embed-responsive-item" src="https://info.honeyswap.org/token/0xbab3cbdcbcc578445480a79ed80269c50bb5b718#/token/0xbab3cbdcbcc578445480a79ed80269c50bb5b718" allowFullScreen></iframe>
-            </div>  
-        </div>
 
       </DisplayContext.Provider>
       </BlockchainContext.Provider>
