@@ -1,52 +1,755 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<!doctype html>
+<html class="no-js" lang="en">
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@100;200;300;400;500;600;700;800&family=Roboto&display=swap" rel="stylesheet">
-    <title>Medooza Eccosystem: Stake</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Medooza Ecosystem - Stake program </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="assets/img/medooza_blue_icon.ico">
+
+ 
+   <!--=== Reset Css ===-->
+   <link rel="stylesheet" href="assets/css/normalize.css">
+   <!--=== Bootstrap ===-->
+   <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+   <!--=== Fontawesome icon ===-->
+   <link rel="stylesheet" href="assets/css/font-awesome-5.10.2.min.css">
+   <!--=== Magnific Popup===-->
+   <link rel="stylesheet" href="assets/css/plugin/magnific-popup.css">
+   <!--=== nice-select Popup===-->
+   <link rel="stylesheet" href="assets/css/plugin/nice-select.css">
+   <!--=== Animation Css ===-->
+   <link rel="stylesheet" href="assets/css/plugin/animate.css">
+   <!--=== Main Css ===-->
+   <link rel="stylesheet" href="assets/css/style.css">
+   <!--=== Responsive Css ===-->
+   <link rel="stylesheet" href="assets/css/responsive.css">
+    <!-- <script src="assets/js/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://widgets.coingecko.com/coingecko-coin-ticker-widget.js"></script>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+</head>
+
+<body>
+    <!-- ==========Preloader========== 
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    ==========Preloader========== -->
+
+
+
+    <!-- Banners Start -->
+    <div class="banner" id="transfer" style="background-image: url('./assets/img/banner-bg-1-1.webp')">
+        <div class="man">
+            <img src="./assets/img/coin/1.png" alt="" class="coin-1">
+            <img src="./assets/img/coin/2.png" alt="" class="coin-2">
+            <img src="./assets/img/coin/3.png" alt="" class="coin-3">
+            <img src="./assets/img/coin/4.png" alt="" class="coin-4">
+            <img src="./assets/img/coin/5.png" alt="" class="coin-5">
+            <img src="./assets/img/coin/6.png" alt="" class="coin-6">
+            <img src="./assets/img/coin/7.png" alt="" class="coin-7">
+            <img src="./assets/img/coin/8.png" alt="" class="coin-8">
+            <img class="bg-sape-1" src="./assets/img/banner-bg-2.webp" alt="">
+        </div>
+        <!-- Application -->
+        <div class="hero-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <noscript>You need to enable JavaScript to run this app.</noscript>
+                    <div id="root" class="align-items-center"></div>
+                </div>
+            </div>
+        </div>            
+         <!-- End Application -->
+    <!-- Main (Hero) Start -->
+
+    <!-- End Main (Hero) Start -->    
+    </div>
+    <!-- Lending / Price Prediction Start -->
     <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <div class="lending" id="prediction">
+        <div class="bg-img">
+            <img src="assets/img/easy-bg.png" alt="" class="easy-bggg">
+        </div>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-6">
+                    <div class="section-head wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.3s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                        <h4 class="lasthead">be a part of the success story</h4>
+                        <h2 class="title">Medooza token (MDZA) price prediction</h2>
+                        <p class="text">
+                            You can be a part of the success story. 
+                        </p>
+                        <p class="text">
+                            Here are many ways to earn from MDZA right today. 
+                        </p>
+                        <p class="text">
+                            Our token is growing and has high price on the XDai network compared to Ethereum.
+                        </p>  
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
+                        <ul class="list">
+                            <li class="list-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s" style="visibility: visible;animation-duration: 0.3s;animation-delay: 0.2s;animation-name: fadeInUp;">
+                                <span class="check"><img src="assets/img/check.png" alt=""></span>
+                                <p class="text">Join the poll <a href="https://app.honeyswap.org/#/add/0xbab3cbdcbcc578445480a79ed80269c50bb5b718/xDAI?chainId=100" target="_blank"> here</a></p>
+                            </li>
+                            <li class="list-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.3s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                <span class="check"><img src="assets/img/check.png" alt=""></span>
+                                <p class="text">We continuously developing since 2017  <a href="https://medooza.io/#roadmap" target="_blank"> Road map</a></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 d-none d-xl-block">
+                    <div class="fpic">
+                        <img src="assets/img/mdza-graph-1.webp" alt="Medooza token price prediction" class="faq-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+-->
+    <!-- End Lending / Price PredictionStart -->  
+    <!-- Price Prediction -->
+    <div class="effortless" id="prediction" style="background: white;">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                    <div class="section-head">
+                        <h2 class="title">Medooza token (MDZA) price prediction</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-5" style="align-self: baseline;">
+                    <p class="text">
+                        You can be a part of the success story. 
+                    </p>
+                    <p class="text">
+                        Here are many ways to earn from MDZA right today. 
+                    </p>
+                    <p class="text">
+                        Our token is growing and has high price on the XDai network compared to Ethereum.
+                    </p>   
+                    <p class="text">
+                        Join the poll <a href="https://app.honeyswap.org/#/add/0xbab3cbdcbcc578445480a79ed80269c50bb5b718/xDAI?chainId=100" target="_blank"> here</a>
+                    </p>    
+                    <p class="text">
+                        We developing since 2017  <a href="https://medooza.io/#roadmap" target="_blank"> Road map</a>
+                    </p>   
+                    <ul class="list">
+                        <li class="list-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s" style="visibility: visible;animation-duration: 0.3s;animation-delay: 0.2s;animation-name: fadeInUp;">
+                            <span class="check"><img src="assets/img/check.png" alt=""></span>
+                            <p class="text">Join the poll <a href="https://app.honeyswap.org/#/add/0xbab3cbdcbcc578445480a79ed80269c50bb5b718/xDAI?chainId=100" target="_blank"> here</a></p>
+                        </li>
+                        <li class="list-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.2s" style="visibility: visible; animation-duration: 0.3s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <span class="check"><img src="assets/img/check.png" alt=""></span>
+                            <p class="text">We continuously developing since 2017  <a href="https://medooza.io/#roadmap" target="_blank"> Road map</a></p>
+                        </li>
+                    </ul>                                                
+                </div>
+                <div class="col-xl-7 d-none d-xl-block">
+                    <div class="fpic">
+                        <img src="assets/img/mdza-graph-1.webp" alt="Medooza token price prediction" class="faq-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Enf Price Prediction -->
+    <!-- Effortless Start -->
+    <div class="effortless"  id="features"  style="background: white;"> 
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                    <div class="section-head">
+                        <h2 class="title">THE FIRST SYMBIOTIC BLOCKCHAIN ECOSYSTEM</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-8">
+                    <div class="section-head wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                        <h4 class="lasthead">Why choose Medooza?</h4>
+                        <p class="text">
+                            We believe that the social engagement status quo can be changed by Challenging The Way That Users, Advertisers & Organizations Interact With each other.
+                            “The Medooza Project Enable The Blockchain Mass adoption possible”.
+                            <a href="https://www.medooza.io" target="_blank" alt="more about medooza project">Read more about the project</a>
+                            <br></br></br>
+                            <iframe width="95%" height="315" src="https://www.youtube.com/embed/j4TRCQ6LHjo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="col-xl-4 d-none d-xl-block">
+                    <div class="pic">
+                        <img src="assets/img/transfer.webp" alt="" class="transfer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Effortless Start -->    
+    <!-- Easy Start -->
+    <div class="easy" id="howitworks" style="background: white;">
+        <div class="bg-img">
+            <img src="assets/img/easy-bg.png" alt="" class="easy-bggg">
+        </div>
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-8">
+                    <div class="section-head wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                        <h4 class="lasthead">How our payment work</h4>
+                        <h2 class="title">It's Really Easy!</h2>
+                        <p class="text">
+                            It's easier than you think.Follow 3 simple easy steps
+                        </p>
+                    </div>
+                    <div class="item-box">
+                        <div class="item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <img src="./assets/img/arrow.webp" alt="" class="arrow">
+                            <div class="icon">
+                                <img src="./assets/img/easy-1.png" alt="">
+                            </div>
+                            <h5 class="title">Provide a wallet in which You are interested in receiving the MDZA token. Provide purchase amount in USD.</h5>
+                        </div>
+                        <div class="item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <img src="./assets/img/arrow.png" alt="" class="arrow">
+                            <div class="icon">
+                                <img src="./assets/img/easy-2.png" alt="">
+                            </div>
+                            <h5 class="title">Select your cryptocurrency</h5>
+                        </div>
+                        <div class="item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <div class="icon">
+                                <img src="./assets/img/easy-3.png" alt="">
+                            </div>
+                            <h5 class="title">Receive a token to provided wallet address on xDai network</h5>
+                            </h5>
+                        </div>
+                    </div>
+                    <div class="vide">
+                        <div class="video-box">
+                            <div class="video-img">
+                                <a class="youtube-video mfp-iframe video-play-btn video-icon"
+                                    href="https://www.youtube.com/watch?v=BAujhysfq3A">
+                                    <i class="fas fa-play"></i>
+                                </a>
+                            </div>
+                            <div class="video-text">
+                                <p class="text">Watch Video Now</p>
+                                <span><i class="far fa-clock"></i> 2:32 minutes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-xl-4 d-none d-xl-block">
+                    <div class="pic">
+                        <img src="assets/img/dashboad.png" alt="" class="dashboad">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Easy Start -->
+    <!-- Rates Start -->
+    <!-- 
+    <div class="rates" style="background-image: url('assets/img/chart.png')">
+        <img src="assets/img/rdot-1.png" alt="" class="rdot-1"> 
+        <img src="assets/img/rdot-3.png" alt="" class="rdot-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                    <div class="section-head">
+                        <h4 class="lasthead">Cash out your crypto to</h4>
+                        <h2 class="title">Global Exchange Rates for Medooza (MDZA)</h2>
+                        <p class="text">
+                            Our goal is to simplify investing so that anyone can be an investor.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-12">
+                    <div class="main-chart">
+                        <div class="chart-box">
+
+                            <div class="content wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <div class="item">
+                                    <h3 class="subtitle">Current Rates</h3>
+                                    <a href="#" class="link">See live Rates</a>
+                                </div>
+                                <div class="item">
+                                    <form id="#" method="post" action="#">
+                                        <div class="form-group">
+                                            <div class="selector">
+                                                <div class="coin">
+                                                    <img src="./assets/img/btc.png" alt="">
+                                                    <div class="language-select">
+                                                        <select class="select-bar">
+                                                            <option value="">BTC</option>
+                                                            <option value="">USD</option>
+                                                            <option value="">BTC</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="item">
+                                    <h3 class="subtitle">€9357.79</h3>
+                                    <a href="#" class="link">Bitcoin (BTC)</a>
+                                </div>
+                            </div>
+                            <div class="contentbox-2 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <div class="item-box">
+                                    <h3 class="subtitle">€ 9266.92 | </h3>
+                                    <a href="#" class="link">Yesterday</a>
+                                </div>
+                                <div class="item-box">
+                                    <h3 class="subtitle two">€ 8932.61 | </h3>
+                                    <a href="#" class="link">Last Week</a>
+                                </div>
+                                <div class="item-box">
+                                    <h3 class="subtitle">€ 10013.90 | </h3>
+                                    <a href="#" class="link">Last Month</a>
+                                </div>
+                            </div>
+                            <div class="chart wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <div id="chart">
+                                    <div id="timeline-chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     -->
-  </body>
+
+    <!-- faq Start -->
+    <div class="faq" id="faq" style="background: white;">
+        <img src="assets/img/fdot-1.webp" alt="" class="fdot-1">
+        <img src="assets/img/fdot-2.webp" alt="" class="fdot-2">
+        <img src="assets/img/fdot-3.png" alt="" class="fdot-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                    <div class="section-head">
+                        <h2 class="title">We here to help You!</h2>
+                    </div>
+                    <div class="mcwidget-embed" data-widget-id="4085993"></div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-xl-8">
+                    <div class="faq-box">
+                        <div class="accordion" id="accordionExample">
+                            <div class="accordion-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <img src="assets/img/faq-icon.webp" alt="" class="icon">
+                                        With what currency can I pay?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Coinpayments support thousands of tokkens. 
+                                        You can choose a preferred one during the purchase process. 
+                                        <a href="https://www.coinpayments.net/supported-coins" target="_blank">The full list of supported tokens.</a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <img src="assets/img/faq-icon.png" alt="" class="icon">
+                                        How soon will the purchased token be available?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Since we worked with xDai network, the process start to be short. 
+                                        But here is still network dependency if You purchase with ETH or BTC.
+                                        You can <a href="https://blockscout.com/" target="_blank" alt="Transaction status on blockchain"> check the status </a> on blockchain at any time.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        <img src="assets/img/faq-icon.png" alt="" class="icon">
+                                        What fees do I need to pay when making the purchase?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You pay the standard network fee only.
+                                        Each transaction on blockchain required "GAS".
+                                        Each network has a different GAS fee.
+                                        For example, on xDai the GAS is about $0.000086 USD.
+                                        You will see the exactly the network fee during the purchase process.
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="false"
+                                        aria-controls="collapseFour">
+                                        <img src="assets/img/faq-icon.png" alt="" class="icon">
+                                        Can i sell or trade my MDZA tokens?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Absolutely. Here are many different ways You can sell/trade or use our token.
+                                        Please refer to: <a href="https://medooza.gitbook.io/medooza-project-wiki/" target="_blank">our wiki</a>
+                                    </div>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 d-none d-xl-block">
+                    <div class="fpic">
+                        <img src="assets/img/faq.png" alt="" class="faq-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- subscribe Start -->
+    <!-- 
+    <div class="subscribe" id="help">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="content-box" style="background-image: url('assets/img/subscribe.png')">
+                        <div class="content wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <h3 class="title">Get latest crypto news</h3>
+                            <p class="text">Subscribe to our newsletter for regular updates.</p>
+                        </div>
+                        <div class="input-box wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Enter Your Email" class="form-control">
+                                            <button class="button-1">Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+    <!-- Footer Start -->
+    <div class="footer" style="background-image: url('assets/img/footer-bg.png')">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                    <div class="footer-box">
+                        <div class="logo"><img src="assets/img/logo-text-white-300x49.webp" height="50px" width="300px" alt="Medooza logo"></div>
+                        <p class="text">Safe, secure, & innovative token that make the Blockchain mass adoption possible.</p>
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="0.3s"
+                            data-wow-delay="0.3s">
+                            <div class="footer-box">
+                                <h4 class="lasthead">Company</h4>
+                                <ul class="footer-link">
+                                    <li><a href="https://medooza.io">About Us</a></li>
+                                    <li><a href="https://medooza.network/contact/">Contact Us</a></li>
+                                    <li><a href="https://medooza.network/blog/category/official-project-blog/">Blog</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="0.4s"
+                            data-wow-delay="0.3s">
+                            <div class="footer-box">
+                                <h4 class="lasthead">Support</h4>
+                                <ul class="footer-link">
+                                    <li><a href="https://medooza.gitbook.io/medooza-project-wiki/">FAQ</a></li>
+                                    <li><a href="https://medooza.network/contact/">Contact</a></li>
+                                    <li><a href="https://medooza.gitbook.io/medooza-project-wiki/">Knowledge Base</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="0.5s"
+                            data-wow-delay="0.3s">
+                            <div class="footer-box">
+                                <h4 class="lasthead">Policy</h4>
+                                <ul class="footer-link">
+                                    <li><a href="#">Terms of use</a></li>
+                                    <li><a class="ajax-popup-link mfp-iframe" href="PrivacyPolicy.html">Privacy Policy</a></li>
+                                    <li><a href="#">Disclaimer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-duration="0.6s"
+                            data-wow-delay="0.3s">
+                            <div class="footer-box">
+                                <h4 class="lasthead">Contacts</h4>
+                                <ul class="footer-link">
+                                    <li> support@medooza.io </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="footer-bottom">
+                        <div class="content wow fadeInUp" data-wow-duration="0.3s" data-wow-delay="0.3s">
+                            <p class="text">Copyright &copy; 2021. All Rights Reserved By <a href="https://medooza.io">Medooza Company</a></p>
+                        </div>
+                        <div class="social-style wow fadeInUp" data-wow-duration="0.4s" data-wow-delay="0.3s">
+                            <a href="https://www.facebook.com/medoozaio"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/medooza8"><i class="fab fa-twitter"></i></a>
+                            <a href="https://t.me/medoozaio"><i class="fab fa-telegram"></i></a>
+                            <a href="https://www.youtube.com/channel/UCCeAgc7FdqzDj0ihAKheKUg"><i class="fab fa-youtube"></i></a>
+                            <a href="https://instagram.com/medooza.project/"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--====== Scroll To Top Start ======-->
+    <div id="scrollUp" title="Scroll To Top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!--====== Scroll To Top End ======-->
+
+    <!--==================================================================-->
+
+    <script src="assets/js/proper-min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--=== All Plugin ===-->
+    <!-- <script src="assets/js/plugin/waypoint.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/3.0.0/noframework.waypoints.min.js" integrity="sha512-lzIDzaYCox5oeC0ymj6ho5fRdMrCYkhHfVEm3fySZStdwG85y9SxTcIFYYEUiW1KYbkfiInVFkGofRlYlkHgLw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="assets/js/plugin/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugin/jquery.nice-select.min.js"></script>
+    <!-- <script src="assets/js/plugin/canvas.js"></script> -->
+    <!-- <script src="assets/js/plugin/canvas-customize.js"></script> -->
+    <script src="assets/js/plugin/wow.min.js"></script>
+    <!--=== PayPal 
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    ===-->
+    <!--=== All Active ===-->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Scripts -->
+    <!-- ManyChat -->
+    <script src="//widget.manychat.com/2212389805648353.js" defer="defer"></script>
+    <script src="https://mccdn.me/assets/js/widget.js" defer="defer"></script>
+    
+    <script>
+        var getUrlParameter = function getUrlParameter(sParam) {
+            
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        $(document).ready(function () {
+            var address = getUrlParameter('MDZA');
+            var address = address.replace("-", "");
+            $("input#address").val(address);
+        });
+    </script>
+ 
+        <script>
+            $("#loading").hide();
+            $('#addrForm').submit(function (e) {
+                e.preventDefault();
+                var $inputs = $('#addrForm :input');
+                // Get all the forms elements and their values in one step
+                var values = {};
+                $inputs.each(function () {
+                    values[this.name] = $(this).val();
+                });
+                console.log(values.address1);
+                $.ajax({
+                    url: `/token/balance?address=${values.address1}`,
+                    method: 'GET',
+                    success: function (response) {
+                        alert(response.value + " MDZA");
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            });
+    
+        </script>
+
+        <script>
+            var url = new URL(window.location.href);
+            var value = url.searchParams.get("callback");
+            if(value=='coinpayment'){
+                alert("You have successfully purchase token via coinpayment. We will credit token in few minutes");
+                // This will remove ?callback=coinpayment from URL. T
+                // Thus preventing alert message on every page refresh
+                window.history.replaceState({}, document.title,"/");
+            }
+
+            function validateCoinPaymentsSubmission() {
+ 
+                var amount = document.getElementById("amount").value;
+                var address = document.getElementById('address').value;
+               
+
+                if (!amount || !address) {
+                    alert("Please enter values in text box");
+                    return false;
+                }
+                $("#coinpaymentAmount").val(amount);
+                $("#custom").val(address);
+                $("#coinpaymentAmount_2").val(amount);
+                $("#custom_2").val(address);
+                return true;
+            }
+        </script>
+
+    <!-- Metamask buttons -->
+    <script text="text/javascript">
+        const ethereumButton = document.querySelector('.connectEthereumAccount');
+        const showAccount = document.querySelector('.showAccount');
+
+        ethereumButton.addEventListener('click', () => {
+        getAccount();
+        });
+
+        async function getAccount() {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        console.log(account.slice(account.length - 8)); //Outputs: last 8 dig
+        showAccount.innerHTML = account.slice(account.length - 8);
+        }
+    </script>
+    <script>
+        // Miscellaneous
+        const switchEthereumChain = document.getElementById('switchEthereumChain');
+        const showChain = document.querySelector('.showChain');
+
+        switchEthereumChain.addEventListener('click', () => {
+        xDai();
+        });
+
+        async function xDai() {
+        switchEthereumChain.onclick = async () => {
+        //  showChain.innerHTML = 'Onboarding in progress';
+        await ethereum.request({
+        method: 'wallet_switchEthereumChain',
+        params: [
+            {
+            chainId: '0x64',
+            },
+        ],
+        });
+        };
+        //	showChain.innerHTML = chainId;
+        }
+    </script>
+    <script text="text/javascript">
+        const watchAsset = document.getElementById('watchAsset');
+        watchAsset.addEventListener('click', () => {
+            watchAssetFunc();
+        });
+        async function watchAssetFunc() {
+        ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+            type: 'ERC20',
+            options: {
+            address: '0xbab3cbdcbcc578445480a79ed80269c50bb5b718',
+            symbol: 'MDZA',
+            decimals: 18,
+            image: 'https://etherscan.io/token/images/medooza_28.png',
+            },
+            },
+        })
+        .then((success) => {
+            if (success) {
+            console.log('FOO successfully added to wallet!')
+            } else {
+            throw new Error('Something went wrong.')
+            }
+        })
+        .catch(console.error)
+        }
+    </script>
+    <!-- Add xDai network to wallet -->
+    <script>
+        const addEthereumChain = document.getElementById('addEthereumChain');
+        addEthereumChain.addEventListener('click', () => {
+        xDaiNetwork();
+        });
+        async function xDaiNetwork() {
+        addEthereumChain.onclick = async () => {
+        await ethereum.request({
+        method: 'wallet_addEthereumChain',
+        params: [
+            {
+            chainId: '0x64',
+            rpcUrls: ['https://rpc.xdaichain.com/'],
+            chainName: 'xDAI MainNet Chain',
+            nativeCurrency: { name: 'xDAI', decimals: 18, symbol: 'xDAI' },
+            blockExplorerUrls: ['https://blockscout.com/xdai/mainnet'],
+            },
+        ],
+        });
+        };
+        }
+    </script>
+    <!-- Popup-->
+    <script>
+        $('.ajax-popup-link').magnificPopup({
+        type: 'ajax'
+        });
+    </script>
+</body>
+
 </html>
