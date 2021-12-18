@@ -74,7 +74,7 @@ export default function NavBar() {
                                 <a class="nav-link" href="#prediction">Price Prediction</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#faq">FAQ & Support</a>
+                                <a class="nav-link" href="https://medooza.gitbook.io/medooza-project-wiki/guides/medooza-stake-program" target="_blank">FAQ & Support</a>
                             </li>
 
                             <li class="nav-item">

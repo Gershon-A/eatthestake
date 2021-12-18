@@ -169,7 +169,7 @@ function App() {
 
   const MainViewOrConnectView = () => (
     <>
-      {web3? <MainView /> : <div class="col-xs-1" align="center"><br/><Button className="button-2" onClick={initConnection} disabled={isConnectingToWallet} >To get started please Connect MetaMask</Button></div> }
+      {web3? <MainView /> : <div class="col-xs-1" align="center"><br/><Button className="button-2" onClick={initConnection} disabled={isConnectingToWallet} > Connect MetaMask</Button></div> }
     </>
   )
 
